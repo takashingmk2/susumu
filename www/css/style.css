@@ -1,0 +1,89 @@
+.col {
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: hidden;
+  padding: 10px;
+  color: #000;
+  font-size:17px;
+  margin: 10px 8px 8px 8px;
+}
+#location-regi #name{
+  margin:20px 0px 10px 0px;
+}
+/*
+.ios-bg{
+  background-color:rgba(24,103,194,0.81);
+}
+*/
+#location-list .list__item{
+  height: 20px;
+}
+ul{
+  list-style-type: none;
+}
+li{
+  margin:3px 0px;
+}
+
+.list__item__title{
+ padding-right:14px;
+ font-size:16px;
+ //font-weight: bold;
+}
+.list__item__subtitle{
+ padding-right:14px;
+ font-size:10px; 
+}
+.date{
+  font-size:10px;
+  color:#999;
+}
+
+#location-lists{
+}
+
+.onoffswitch {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "選択";
+    padding-left: 10px;
+    background-color: #0064D6; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "編集";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}

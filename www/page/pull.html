@@ -1,0 +1,14 @@
+<ons-page>s
+  <ons-pull-hook id="onRefresh" persistent>
+    Pull to refresh
+  </ons-pull-hook>
+  <section style="padding: 8px">
+    <input id="bbs-title" type="text" class="text-input" ng-model="text" placeholder="タイトル" style="display: block; width: 100%">
+  </section>
+  <section style="padding: 10px 30px">
+    <textarea id="bbs-content" class="textarea" ng-model="text2" placeholder="内容" rows="10" cols="10" ></textarea>
+  </section>
+  <section style="padding: 8px 8px">
+    <ons-button modifier="large" onclick="bbsWrite()">記事を投稿</ons-button>
+  </section>
+</ons-page>

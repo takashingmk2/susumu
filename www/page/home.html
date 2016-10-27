@@ -1,0 +1,41 @@
+<ons-page>
+  <ons-toolbar id="toolbar">
+    <style>
+    .page__background{
+      height: 100%;
+      background-repeat: no-repeat;
+      background-image: none;
+    }
+    </style>
+    <div class="left">
+      <ons-toolbar-button onclick="menuOpen()">
+        <ons-icon icon="md-menu"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+    <div class="center">
+      太郎
+    </div>
+    <div class="right">
+      <ons-toolbar-button id="refresh-icon">
+        <ons-icon class="list-update" icon="ion-android-sync" onclick="bbsList()"></ons-icon>
+      </ons-toolbar-button>
+      <ons-toolbar-button id="alert-block">
+        <ons-icon icon="ion-android-notifications" onclick="slideOpen('page/alert-page.html')"></ons-icon>
+      </ons-toolbar-button>
+      <!--<ons-toolbar-button id="menu-icon">
+      <div class="dropdown">
+        <ons-icon icon="ion-more" class="dropdown-toggle" type="button" data-toggle="dropdown"></ons-icon>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#">HTML</a></li>
+          <li><a href="#"</a></li>
+          <li><a href="#">ログアウト</a></li>
+        </ul>
+      </div>
+      </ons-toolbar-button>-->
+    </div>
+  </ons-toolbar>
+  <ons-tabbar id="main-tab" position="top" var="mainTab">
+    <ons-tab page="page/bbs/bbs.html" onclick="mainTabChange(1)" label="ご近所掲示板" active="true" persistent></ons-tab>
+    <ons-tab page="page/rent/rent.html" onclick="mainTabChange(2)" label="レンタル掲示板" persistent></ons-tab>
+  </ons-tabbar>
+</ons-page>

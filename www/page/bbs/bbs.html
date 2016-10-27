@@ -1,0 +1,68 @@
+<ons-page><!--
+  <ons-pull-hook threshold-height="220px" height="180px" id="refresh">
+    Pull to refresh
+  </ons-pull-hook>-->
+  <!--
+  <ons-pull-hook id="onRefresh">
+    Pull to refresh
+  </ons-pull-hook>
+  <ons-button align="right" id="btn1" onclick="showPopover(this)">page1</ons-button>
+  <ons-button align="right" id="btn2" onclick="bbsList()">page2</ons-button>
+  <ons-button align="right" id="btn3" onclick="returnLocation()">page3</ons-button>
+  <ons-button align="right" id="btn4" onclick="bbsContent()">page4</ons-button>-->
+  <ons-list id="bbs-lists"><!--
+    <ons-list-item class="bbs-list" onclick="bbsDetail(1)">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="ion-flag" size="2x"></ons-icon></div>
+      <div class="center"><span class="list__item__title">第70回 名古屋みなと祭 花火大会</span>
+      <span class="list__item__subtitle">名古屋港の夏の恒例行事！名古屋みなと祭のフィナーレ</span></div>
+    </ons-list-item>
+    <ons-list-item class="bbs-list" onclick="bbsDetail(2)">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="ion-clipboard" size="2x"></ons-icon></div>
+      <div class="center"><span class="list__item__title">鍵の落とし物のお知らせ</span>
+      <span class="list__item__subtitle">自転車の鍵見ませんでした？　場所 熱田区　拾った時間：6月24日 17時頃～</span></div>
+    </ons-list-item>
+    <ons-list-item class="bbs-list" onclick="bbsDetail(3)">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="ion-person" size="2x"></ons-icon></div>
+      <div class="center"><span class="list__item__title">不審者情報</span>
+      <span class="list__item__subtitle">時間：6月20日 16時頃　場所：熱田区伝馬町　特徴：黒帽子に赤黒チェックの服</span></div>
+    </ons-list-item>
+    <ons-list-item class="bbs-list" onclick="bbsDetail(4)">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="ion-clipboard" size="2x"></ons-icon></div>
+      <div class="center"><span class="list__item__title">キーホルダー見ませんでしたか？</span>
+      <span class="list__item__subtitle">頭に赤い帽子をかぶったクマのぬいぐるみのキーホルダーをみませんでしたか？</span></div>
+    </ons-list-item>
+    <ons-list-item class="bbs-list" onclick="bbsDetail(5)">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="ion-ios-body" size="2x"></ons-icon></div>
+      <div class="center"><span class="list__item__title">ラジオ体操の開催のお知らせ</span>
+      <span class="list__item__subtitle">場所：熱田公園　６：３０～　皆さん気持ちよく朝を迎えましょう！</span></div>
+    </ons-list-item>-->
+    <ons-list-item id="bbs-list" class="bbs-list bbs-list-seed" style="display:none">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="ion-clipboard" size="2x"></ons-icon></div>
+      <div class="center">
+      <span class="list__item__title">Cutest kitty</span>
+      <span class="date">07月25日7時14分</span>
+      </div>
+    </ons-list-item>
+  </ons-list>
+  
+  <ons-speed-dial position="bottom right" direction="left">
+    <ons-fab> 
+      <ons-icon icon="md-plus"></ons-icon>
+    </ons-fab>
+    <ons-speed-dial-item class="wirte-ic" onclick="popOpen('page/bbs/bbs-write.html')">
+      <ons-icon icon="ion-edit" ></ons-icon>
+    </ons-speed-dial-item>
+    <ons-speed-dial-item class="book-ic"  onclick="locationSelect()">
+      <ons-icon icon="ion-ios-bookmarks"></ons-icon>
+    </ons-speed-dial-item>
+    <ons-speed-dial-item class="location-ic" onclick="openDialog('location-regi')">
+      <ons-icon icon="ion-android-pin"></ons-icon>
+    </ons-speed-dial-item>
+  </ons-speed-dial>
+</ons-page>

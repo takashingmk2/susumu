@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    
+    
+    <script src="lib/jquery/jquery-2.1.4.min.js"></script>
+    <script src="components/loader.js"></script>
+    <script src="lib/onsenui/js/onsenui.js"></script>
+  	<!-- Tuyen san -->
+  	<script type="text/javascript" src="lib/onsenui/js/angular.js"></script>
+  	<script src="lib/onsenui/js/angular-onsenui.js"></script>
+  	<script src="lib/socket.io-client/socket.io.js"></script>
+		<!--------------->
+    <script src="lib/jquery/jquery.switch.js"></script>
+    <script src="lib/bootstrap/bootstrap.js"></script>
+  	<script src="js/bbs.js"></script>
+    <script src="js/rent.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/alert.js"></script>
+    <script src="js/app.js"></script>
+    <script src="lib/bootstrap/bootstrap-toggle.min.js"></script>
+
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+    <!--<link rel="stylesheet" href="lib/jquery/jquery.switch.css">
+    <link rel="stylesheet" href="lib/jquery/jquery.switch.theme.css">-->
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="lib/bootstrap/aaa.css">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap2-toggle.min.css">
+		<!-- Tuyen san -->
+	  <link rel="stylesheet" href="css/font-awesome.css">
+	  <link rel="stylesheet" href="css/style-chat.css">
+	  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+		<!--------------->
+
+    <script>
+    ons.bootstrap()
+    ons.ready(function () {
+      console.log("Onsen UI is ready!");
+      document.getElementById('myNavigator').pushPage('page/login/login.html');
+      
+    });
+    
+    /*
+     window.fn.load = function(page) {
+     var content = document.getElementById('content');
+     var menu = document.getElementById('menu');
+     content.load(page)
+     .then(menu.close.bind(menu));
+     };
+     */
+    </script>
+  </head>
+  <body>
+  <ons-navigator id="myNavigator">
+  </ons-navigator>
+  
+  <ons-template id="splitter.html">
+    <ons-splitter id="mySplitter">
+      <ons-splitter-side id="menu" side="left" collapse swipeable>
+        <ons-page>
+          <ons-list>
+            <ons-list-item onclick="openSlide('page/home.html')" tappable>
+            
+            </ons-list-item>
+            <ons-list-item onclick="openSlide('page/home.html')" tappable>
+              ホーム画面
+            </ons-list-item>
+            <ons-list-item onclick="openSlide('useradit.html')" tappable>
+              アカウント情報編集
+            </ons-list-item>
+            <ons-list-item onclick="myNavigator.pushPage('chatselect.html', { animation : 'slide' } )" tappable>
+              チャット
+            </ons-list-item>
+            <ons-list-item onclick="openSlide('page/login/login.html')" tappable>
+              <ons-icon icon="ion-power"><span style="margin-left:10px">ログアウト</span>
+            </ons-list-item>
+          </ons-list>
+        </ons-page>
+      </ons-splitter-side>
+      <ons-splitter-content id="content" page="page/home.html"></ons-splitter-content>
+    </ons-splitter>
+  </ons-template>
+  
+  <ons-template id="rent.html">
+  </ons-template>
+
+<!-- Location ------------------>
+<ons-dialog id="location-select.html">
+  <div style="text-align: center; padding: 10px;">
+    <p style="margin-top:10px">Location List</p>
+    <div id="location-edit">
+      <input id="location-toggle" type="checkbox" data-toggle="toggle" data-onstyle="warning" data-on="編集" data-off="編集" onchange="locationEdit()">
+    </div>
+    <ons-list id="location-seed">
+      <ons-list-item id="seed" class="location-list" style="display:none">
+        <span class="location_key"></span>
+        <label class="center">
+          <ons-input class="edit-name name" modifier="underbar" style="display:none" placeholder="" value="友人"></ons-input>
+          <div class="check-name name">友人</div>
+        </label>
+        <label class="right">
+          <button type="button" class="btn btn-danger del-btn" style="display:none;padding:3px 10px;margin-bottom:8px"><ons-icon size="23px" icon="ion-ios-trash"></ons-icon></button>
+          <ons-input type="checkbox" class="check" style="display:flex"></ons-input>
+        </label>
+      </ons-list-item>
+    </ons-list>
+    <ons-list id="location-lists">
+      <!--
+      <ons-list-item id="location2" tappable>
+        <span class="location_key" value=""></span>
+        <label for="check-2" class="center">
+          <ons-input id="location-name2" modifier="underbar" placeholder="" float value="学校"></ons-input>
+        </label>
+        <label class="right">
+          <ons-input type="checkbox" input-id="check-2"></ons-input>
+        </label>
+      </ons-list-item>
+      <ons-list-item id="location3" tappable>
+        <span class="location_key" value=""></span>
+        <label for="check-3" class="center">
+          <ons-input id="location-name3" modifier="underbar" placeholder="" float value="実家"></ons-input>
+        </label>
+        <label class="right">
+          <ons-input type="checkbox" input-id="check-3"></ons-input>
+        </label>
+      </ons-list-item>-->
+    </ons-list>
+    <ons-button onclick="closeDialog('location-select.html')">閉じる</ons-button>
+    <!--<ons-button onclick="locationEditAll(region)">決定</ons-button>-->
+  </div>
+</ons-dialog>
+
+<ons-dialog id="location-regi">
+  <div style="text-align: center; padding: 30px;">
+    <p>
+      現在位置を登録しますか？
+    </p>
+    <div><ons-input style="width:200px" class="place" modifier="underbar" placeholder="場所名" float></ons-input></div>
+    <ons-button onclick="closeDialog('location-regi')">閉じる</ons-button>
+    <ons-button onclick="locationRegi('location-regi')">登録</ons-button>
+  </div>
+</ons-dialog>
+
+<ons-dialog id="dialog-2.html" cancelable>
+  <div class="alert-dialog-footer">
+    <ons-list-item tappable onclick="getPhoto2 ()" >写真を撮影する</ons-list-item>
+    <ons-list-item tappable onclick="getPhoto ()" >アルバムから選択する</ons-list-item> 
+  </div>
+</ons-dialog>
+
+<ons-dialog id="load-dialog" style="opacity:0.4">
+  <div align="center" >
+    <ons-progress-circular indeterminate></ons-progress-circular>
+  </div>
+</ons-dialog>
+
+<!-- Location ------------------>
+<ons-dialog id="reply-msg">
+  <div style="text-align: center; padding: 10px;">
+    <p>相手に一言送信します</p>
+    <section style="padding: 10px 10px">
+      <textarea id="reply-once" class="textarea" placeholder="ひとこと"></textarea>
+    </section>
+    <ons-button onclick="closeDialog('reply-msg')">閉じる</ons-button>
+    <ons-button onclick="rentReply()">決定</ons-button>
+  </div>
+</ons-dialog>
+
+<!-- ゴミ ---------
+<ons-template id="bbs-write.html">
+</ons-template>
+
+<ons-template id="rent-write.html">
+</ons-template>
+
+<ons-template id="bbs-content.html">
+</ons-template>
+
+<ons-template id="rent-content.html">
+</ons-template>
+
+<ons-template id="settings.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="menuOpen()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Settings
+      </div>
+    </ons-toolbar>
+  </ons-page>
+</ons-template>
+
+<ons-template id="about.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        About
+      </div>
+    </ons-toolbar>
+  </ons-page>
+</ons-template>
+------------
+<!--
+<script>  
+  $(function(){
+    myNavigator.pushPage("page/login/login.html",{ animation : 'lift' });
+  });
+</script>
+-->
+<ons-template id="chatselect.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Back</ons-back-button>
+      </div>
+      <div class="center">チャットを選択</div>
+    </ons-toolbar>
+
+  </ons-page>
+</ons-template>
+</body>
+</html>

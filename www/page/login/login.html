@@ -1,0 +1,31 @@
+
+<ons-page>
+  <div class="container">
+    <!--  <div style="text-align:center;margin-top:25px;margin-right:9px">
+    <img src="telma.jpg" class="img-rounded" width="96" height="65"  />
+    </div> -->
+    <div class="card card-container">
+      <p id="profile-name" class="profile-name-card"></p>
+      <div class="form-signin">
+        <img id="profile-img"src="image/telma.jpg" class=" img-responsive profile-img-card  " style=" width: 96px; margin-bottom:15px;
+              height: 96px;margin: 0 auto 10px;display: block;-moz-border-radius: 50%;-webkit-border-radius: 50%;border-radius: 50%;">
+        <span id="reauth-email" class="reauth-email"></span>
+        <input type="email" id="inputEmail" class="form-control" placeholder="メールアドレス" required autofocus>
+        <input type="password" id="inputPassword" class="form-control" placeholder="パスワード" required>
+        <button onclick="login()" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">ログイン</button>
+      </div><!-- /form -->
+      <button onclick="newUserPage()" id="push-button" class="btn btn-lg btn-success btn-block btn-signin">新しくアカウントを作る</button>
+      <div align='center'style="margin-top:15px">
+        <a  style= "text-align : center;text-decoration: none;   class="forgot-password" onclick="modoru2()" >
+          パスワードを忘れた方
+        </a>
+        <br />
+        <font  size="-1">連携アカウントお持ちの方</font>
+        <br />
+        <a class="btn btn-social-icon btn-twitter" ><span class="fa fa-twitter"></span></a>
+        <a class="btn btn-social-icon btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);"><span class="fa fa-facebook"></span></a>
+         <a class="btn btn-social-icon btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-google']);"><span class="ion-social-googleplus"></span></a>
+      </div>
+    </div>
+  </div>
+</ons-page>

@@ -1,0 +1,77 @@
+<ons-page>
+<style>
+.alert-list div{
+  padding:5px 0px;
+}
+/*
+button{
+  padding:3px 10px;
+}
+*/
+</style>
+  <ons-toolbar id="toolbar">
+    <div class="left">
+      <ons-back-button></ons-back-button>
+    </div>
+    <div class="center">
+      通知一覧
+    </div>
+  </ons-toolbar>
+  <select class="form-control">
+    <option>全ての通知を表示</option>
+    <option>貸し借りの通知のみ表示</option>
+    <option>掲示板の通知のみ表示</option>
+  </select>
+  <ons-list id="alert-lists">
+    <ons-list-item style="" class="alert-list" onclick="slideOpen('alert-content.html')">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="ion-android-alert" size="2x"></ons-icon></div>
+      <div class="center"><span class="list__item__title">「空気入れを貸してください」から申請がありました。</span></div>
+      <div style="margin:5px 10px 0px 0px" class="right">
+      <button type="button" class="btn agreeBtn btn-secondary" onclick="agreeBtn(0)">
+        未承認
+      </button>
+      </div>
+    </ons-list-item>
+    <ons-list-item style="" class="alert-list" onclick="slideOpen('alert-content.html')">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="fa-comment-o" size="2x"></ons-icon></div>
+      <div class="center"><span class="list__item__title">「鍵の落し物のお知らせ」より返信</span>
+      <span class="list__item__subtitle">鍵落ちてるの見ましたよ！！</span></div>
+    </ons-list-item>
+    <ons-list-item style="" class="alert-list" onclick="slideOpen('alert-content.html')">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="fa-comment-o" size="2x"></ons-icon></div>
+      <div class="center"><span class="list__item__title">「第70回 名古屋みなと祭 花火大会」より返信</span>
+      <span class="list__item__subtitle">すっごい楽しみです！！</span></div>
+    </ons-list-item>
+    <ons-list-item style="" class="alert-list" onclick="slideOpen('alert-content.html')">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="fa-comment-o" size="2x"></ons-icon></div>
+      <div class="center"><span class="list__item__title">「ラジオ体操開催のお知らせ」より返信</span>
+      <span class="list__item__subtitle">是非参加したいです！</span></div>
+    </ons-list-item>
+    <ons-list-item style="" class="alert-list" onclick="slideOpen('alert-content.html')">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="ion-android-alert" size="2x"></ons-icon></div>
+      <div class="center"><span class="list__item__title">「充電器を貸してください！」から申請がありました。</span></div>
+      <div style="margin:5px 10px 0px 0px" class="right">
+      <button type="button" class="btn agreeBtn btn-success active" onclick="agreeBtn(3)">
+        チャットへ
+      </button>
+      </div>
+    </ons-list-item>
+    <ons-list-item style="" class="alert-list" onclick="slideOpen('alert-content.html')">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="ion-ios-information-outline" size="2x"></ons-icon></div>
+      <div class="center"><span class="list__item__title">レンタル広場に新規投稿があります</span>
+      <span class="list__item__subtitle">脚立を貸してください！</span></div>
+    </ons-list-item>
+    <ons-list-item style="" class="alert-list" onclick="slideOpen('alert-content.html')"　modifier="chevron">
+      <span class="keijiban_id" id="0" hidden></span>
+      <div class="left"><ons-icon class="list__item__thumbnail" icon="ion-ios-information-outline" size="2x"></ons-icon></div>
+      <div class="center"><span class="list__item__title">レンタル広場に新規投稿があります</span>
+      <span class="list__item__subtitle">充電器を貸してください！</span></div>
+    </ons-list-item>
+  </ons-list>
+</ons-page>

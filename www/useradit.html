@@ -1,0 +1,86 @@
+<ons-page>
+  <ons-toolbar id="useradit">
+    <style>
+    .page__background{
+      height: 100%;
+      background-repeat: no-repeat;
+      background-image: none;
+    }
+    </style>
+    <div class="center">
+      プロフィールを編集
+    </div>
+    <div class="right">
+    　　<ons-toolbar-button onclick="userback()">完了</ons-toolbar-button>    
+    </div>
+  </ons-toolbar>
+         </br>
+          <img onclick="showDialog('dialog-2.html')" id="image" src="image/telma.jpg" class="img-responsive profile-img-card" 
+          style=" width: 96px;height: 96px;margin: 0 auto 10px;display: 
+          block;-moz-border-radius: 50%;-webkit-border-radius: 50%;border-radius: 50%;">
+          <ons-list-header></ons-list-header>
+          <ons-list-item modifier="chevron" tappable onclick="myNavigator.pushPage('page4.html', { animation : 'slide' } )">名前</ons-list-item>
+          <ons-list-header></ons-list-header>
+          <ons-list-item modifier="chevron" tappable onclick="myNavigator.pushPage('page5.html', { animation : 'slide' } )">メールアドレス</ons-list-item>
+          <ons-list-header></ons-list-header>
+          <ons-list-item>
+            <div class="center">通知</div>
+            <div class="right"><ons-switch checked></ons-switch></div>
+          </ons-list-item>
+           <ons-list-header></ons-list-header>
+          <ons-list-item modifier="chevron" tappable onclick="myNavigator.pushPage('page6.html', { animation : 'slide' } )">連携アプリ</ons-list-item>
+  
+</ons-page>
+
+
+<ons-template id="page4.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Back</ons-back-button>
+      </div>
+      <div class="center">名前</div>
+    </ons-toolbar>
+     </br>
+         <input type="text" class="form-control">
+            <div style="text-align: center">
+    　　    </br>
+                <button type="button" class="btn btn-success">保存</button>
+            </div>
+  </ons-page>
+</ons-template>
+<ons-template id="page5.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Back</ons-back-button>
+      </div>
+      <div class="center">メールアドレス</div>
+    </ons-toolbar>
+     </br>
+         <input type="text" class="form-control">
+            <div style="text-align: center">
+    　　    </br>
+                <button type="button" class="btn btn-success">保存</button>
+            </div>
+  </ons-page>
+</ons-template>
+
+<ons-template id="page6.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Back</ons-back-button>
+      </div>
+      <div class="center">連携</div>
+    </ons-toolbar>
+     </br>
+         <input type="text" class="form-control" placeholder="Twitter ID"></br>
+         <input type="text" class="form-control" placeholder="facebook ID"></br>
+         <input type="text" class="form-control" placeholder="google+ ID">
+            <div style="text-align: center">
+    　　    </br>
+                <button type="button" class="btn btn-success"　>保存</button>
+            </div>
+  </ons-page>
+</ons-template>
